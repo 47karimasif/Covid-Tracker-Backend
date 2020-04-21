@@ -2,7 +2,10 @@ const express = require("express");
 const app = express();
 const axios = require("axios");
 const request = require("request");
+
 app.set("view engine", "ejs");
+
+app.use(express.static('Public'))
 
 app.get("/", (req, res, next) => {
   res.render("index");
