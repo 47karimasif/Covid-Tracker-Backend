@@ -11,5 +11,9 @@ app.get("/", (req, res, next) => {
   res.render("index");
 });
 
+app.get("/maps", (req, res, next) => {
+  res.render("maps");
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`App running on ${PORT}`));
