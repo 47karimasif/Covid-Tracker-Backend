@@ -21,7 +21,14 @@
                     }).send().then(function(response) {
                         if (response && response.body && response.body.features && response.body.features.length) {
                             var feature = response.body.features[0];
-                            new mapboxgl.Marker().setLngLat(feature.center).addTo(map);
+                            var popup = new mapboxgl.Popup({offset: 25}).setHTML('<h6>Country : <%=ct["Country"]%></h6><h6>Total Confirmed : <%=ct["TotalConfirmed"]%></h6><h6>New Confirmed : <%=ct["NewConfirmed"]%></h6><h6>Total Recovered : <%=ct["TotalRecovered"]%></h6><h6>New Recovered : <%=ct["NewRecovered"]%></h6><h6>Total Deaths : <%=ct["TotalDeaths"]%></h6><h6>New Deaths : <%=ct["NewDeaths"]%></h6><h6>Last Update : <%=ct["Date"]%></h6>');
+                            let marker = new mapboxgl.Marker().setLngLat(feature.center);
+                            const element = marker.getElement();
+                            element.id = 'marker'
+                            element.addEventListener('mouseenter', () => popup.addTo(map));
+                            element.addEventListener('mouseleave', () => popup.remove());
+                            marker.setPopup(popup);
+                            marker.addTo(map);
                         }
                     });
         '<% }); %>'
