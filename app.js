@@ -6,8 +6,6 @@ const request = require("request");
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
-app.use(express.static("public"));
-
 // Updated version
 app.get("/", async (req, res, next) => {
   try {
