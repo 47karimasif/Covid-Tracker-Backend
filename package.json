@@ -11,11 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
-    "bootstrap": "^4.4.1",
     "ejs": "^3.0.2",
     "express": "^4.17.1",
-    "jquery": "^3.5.0",
-    "popper.js": "^1.12.9",
     "request": "^2.88.2"
   }
 }

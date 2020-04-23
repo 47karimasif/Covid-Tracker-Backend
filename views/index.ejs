@@ -1,13 +1,45 @@
 <%- include("partials/header") %>
-
-<h1 class="display-1">PROJECT-COVID</h1>
+<section class="heading">
+    <h1> global covid statistics </h1>
+    <h3> Last Updated : <span id="date"></span></h3>
+</section>
 
 <div class="container">
-    <div class="row">
-        <div class="col-lg-12">
-            <div id='map' style='width: 98vw; height: 100vh;'></div>
+    <section class="globalData">
+        <div class="row">
+            <div class="col-md-4">
+                <blockquote id="Confirmed">
+                    <h4><i class="fas fa-head-side-cough"></i> Infected</h4>
+                    <p>Global Cases : <span id="globalcases"></span> </p>
+                    <p> New Cases : <span id="newcases"></span> </p>
+                </blockquote>
+            </div>
+            <div class="col-md-4">
+                <blockquote id="Recovered">
+                    <h4><i class="fas fa-hospital-user"></i> Recovered</h4>
+                    <p>Global Recoveries : <span id="globalrecovered"></span> </p>
+                    <p> New Recoveries : <span id="newrecovered"></span> </p>
+                </blockquote>
+            </div>
+            <div class="col-md-4">
+                <blockquote id="Death">
+                    <h4><i class="fas fa-skull-crossbones"></i> Deaths</h4>
+                    <p>Global Deaths : <span id="globaldeath"></span> </p>
+                    <p> New Deaths : <span id="newdeath"></span> </p>
+                </blockquote>
+            </div>
         </div>
-    </div>
+    </section>
+    
+    <section>
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="map"></div>
+            </div>
+        </div>
+    </section>
+    
+
 </div>
 
 
