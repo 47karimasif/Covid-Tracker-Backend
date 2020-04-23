@@ -21,7 +21,7 @@
                     }).send().then(function(response) {
                         if (response && response.body && response.body.features && response.body.features.length) {
                             var feature = response.body.features[0];
-                            var popup = new mapboxgl.Popup({offset: 25}).setHTML('<h6>Country : <%=ct["Country"]%></h6><h6>Total Confirmed : <%=ct["TotalConfirmed"]%></h6><h6>New Confirmed : <%=ct["NewConfirmed"]%></h6><h6>Total Recovered : <%=ct["TotalRecovered"]%></h6><h6>New Recovered : <%=ct["NewRecovered"]%></h6><h6>Total Deaths : <%=ct["TotalDeaths"]%></h6><h6>New Deaths : <%=ct["NewDeaths"]%></h6><h6>Last Update : <%=ct["Date"]%></h6>');
+                            var popup = new mapboxgl.Popup({offset: 25}).setHTML('<div><h6 class="text-secondary">Country : <%=ct["Country"]%></h6><h6 class="text-info">Total Confirmed : <%=ct["TotalConfirmed"]%></h6><h6 class="text-info">New Confirmed : <%=ct["NewConfirmed"]%></h6><h6 class="text-success">Total Recovered : <%=ct["TotalRecovered"]%></h6><h6 class="text-success">New Recovered : <%=ct["NewRecovered"]%></h6><h6 class="text-danger">Total Deaths : <%=ct["TotalDeaths"]%></h6><h6 class="text-danger">New Deaths : <%=ct["NewDeaths"]%></h6></div>');
                             let marker = new mapboxgl.Marker().setLngLat(feature.center);
                             const element = marker.getElement();
                             element.id = 'marker'
