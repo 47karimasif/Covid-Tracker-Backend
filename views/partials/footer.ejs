@@ -1,3 +1,30 @@
+    <script src="https://unpkg.com/es6-promise@4.2.4/dist/es6-promise.auto.min.js"></script>
+    <script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiYWRhcnNoYWdyd2FsIiwiYSI6ImNrN3BuN2FoNTA4bGEzaXFkcjJvYXQ0ZnAifQ.IaCVUsnZqH77-agcveZKEw';
+        var map = new mapboxgl.Map({
+                        container: 'map',
+                        style: 'mapbox://styles/mapbox/dark-v10',
+                        center: [75,25],
+                        zoom: 2
+                    });
+        var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
+        '<% data["Countries"].forEach(function(ct){%>'
+                '<% var x = ct["Country"]; %>'
+                    mapboxClient.geocoding.forwardGeocode({
+                        query: '<%=x%>',
+                        autocomplete: false,
+                        limit: 1
+                    }).send().then(function(response) {
+                        if (response && response.body && response.body.features && response.body.features.length) {
+                            var feature = response.body.features[0];
+                            new mapboxgl.Marker().setLngLat(feature.center).addTo(map);
+                        }
+                    });
+        '<% }); %>'
+    </script>
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
