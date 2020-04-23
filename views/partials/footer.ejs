@@ -6,16 +6,11 @@
                         container: 'map',
                         style: 'mapbox://styles/mapbox/dark-v10',
                         center: [75,25],
-<<<<<<< HEAD
-                        zoom: 2
-                    });
-=======
                         zoom: 3
                     });
                     
         map.addControl(new mapboxgl.NavigationControl());
 
->>>>>>> c469a4236ee2e4f0a40ee0ec5f30a2ea49bc5a05
         var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
         '<% data["Countries"].forEach(function(ct){%>'
                 '<% var x = ct["Country"]; %>'
@@ -32,10 +27,6 @@
         '<% }); %>'
     </script>
 
-<<<<<<< HEAD
-
-=======
->>>>>>> c469a4236ee2e4f0a40ee0ec5f30a2ea49bc5a05
     <!-- Optional JavaScript -->
     <script src="JS/app.js"></script>
 

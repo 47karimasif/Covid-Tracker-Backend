@@ -7,15 +7,6 @@ const request = require("request");
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
-<<<<<<< HEAD
-app.get("/", (req, res, next) => {
-  request("https://api.covid19api.com/summary", function(error, response, body){
-        if(!error && response.statusCode == 200){
-            var data = JSON.parse(body);
-            res.render("index", {data: data});
-        }
-    });
-=======
 app.use(express.static("public"));
 
 // app.get("/cases-json", (req, res) => {
@@ -61,7 +52,6 @@ app.get("/", async (req, res, next) => {
   } catch (err) {
     console.log(err);
   }
->>>>>>> c469a4236ee2e4f0a40ee0ec5f30a2ea49bc5a05
 });
 
 const PORT = process.env.PORT || 3000;
