@@ -1,5 +1,49 @@
 <%- include("partials/header") %>
+<section class="heading">
+  <h1>global covid statistics</h1>
+  <h3>Last Updated : <span id="date"></span></h3>
+</section>
 
+<<<<<<< HEAD
 <div id="map"></div>
+=======
+<div class="container">
+  <section class="globalData">
+    <div class="row">
+      <div class="col-md-4">
+        <blockquote id="Confirmed">
+          <h4><i class="fas fa-head-side-cough"></i> Infected</h4>
+          <p>Global Cases : <%= data.global.TotalConfirmed %></p>
+          <p>New Cases : <%= data.global.NewConfirmed %></span></p>
+        </blockquote>
+      </div>
+      <div class="col-md-4">
+        <blockquote id="Recovered">
+          <h4><i class="fas fa-hospital-user"></i> Recovered</h4>
+          <p>Global Recoveries : <%= data.global.TotalRecovered %></span></p>
+          <p>New Recoveries : <%= data.global.NewRecovered %></span></p>
+        </blockquote>
+      </div>
+      <div class="col-md-4">
+        <blockquote id="Death">
+          <h4><i class="fas fa-skull-crossbones"></i> Deaths</h4>
+          <p>Global Deaths : <%= data.global.TotalDeaths %></span></p>
+          <p>New Deaths : <%= data.global.NewDeaths %></span></p>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="row">
+      <div class="col-lg-12">
+        <div id="map"></div>
+      </div>
+    </div>
+  </section>
+</div>
 
 <%- include("partials/footer") %>
+</div>
+>>>>>>> c469a4236ee2e4f0a40ee0ec5f30a2ea49bc5a05
+
