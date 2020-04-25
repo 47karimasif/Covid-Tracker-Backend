@@ -17,7 +17,7 @@ app.get("/", async (req, res, next) => {
       data: {
         global: response.data.Global,
         Countries: response.data.Countries,
-      },
+      }
     });
   } catch (err) {
     console.log(err);
