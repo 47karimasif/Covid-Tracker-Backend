@@ -6,7 +6,7 @@ const request = require("request");
 // const covid19 = require("./public/JS/covid19");
 
 app.set("view engine", "ejs");
-const publicdirectorypath = path.join(__dirname, "/public");
+const publicdirectorypath = path.join(__dirname, "/Public");
 app.use(express.static(publicdirectorypath));
 
 // Updated version
@@ -27,8 +27,10 @@ app.get("/", async (req, res, next) => {
 // News Route
 app.get("/global-news", async (req, res, next) => {
   try {
-    const response = await axios.get("http://newsapi.org/v2/everything?q=covid&sortBy=publishedAt&language=en&apiKey=2ce620556cce40d6923ca8ee1d3374fe");
-    res.render("news", {news: response.data});
+    const response = await axios.get(
+      "http://newsapi.org/v2/everything?q=covid&sortBy=publishedAt&language=en&apiKey=2ce620556cce40d6923ca8ee1d3374fe"
+    );
+    res.render("news", { news: response.data });
   } catch (err) {
     console.log(err);
   }
