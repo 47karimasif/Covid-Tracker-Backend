@@ -10,39 +10,24 @@
       <div class="col-md-4">
         <blockquote id="Confirmed">
           <h4><i class="fas fa-head-side-cough"></i> Infected</h4>
-          <p>Total Cases : <%= data.global.TotalConfirmed %></p>
+          <p>Global Cases : <%= data.global.TotalConfirmed %></p>
           <p>New Cases : <%= data.global.NewConfirmed %></span></p>
         </blockquote>
       </div>
       <div class="col-md-4">
         <blockquote id="Recovered">
           <h4><i class="fas fa-hospital-user"></i> Recovered</h4>
-          <p>Total Recoveries : <%= data.global.TotalRecovered %></span></p>
+          <p>Global Recoveries : <%= data.global.TotalRecovered %></span></p>
           <p>New Recoveries : <%= data.global.NewRecovered %></span></p>
         </blockquote>
       </div>
       <div class="col-md-4">
         <blockquote id="Death">
           <h4><i class="fas fa-skull-crossbones"></i> Deaths</h4>
-          <p>Total Deaths : <%= data.global.TotalDeaths %></span></p>
+          <p>Global Deaths : <%= data.global.TotalDeaths %></span></p>
           <p>New Deaths : <%= data.global.NewDeaths %></span></p>
         </blockquote>
       </div>
-    </div>
-  </section>
-
-  <section class="countryrep">
-    <div class="row">
-      <div class="col-md-4"></div>
-      <div class="col-md-4">
-        <select id="country" onchange="gettingCountry();">
-          <option>Select a Country</option>
-          <% for(var i=0; i<data.Countries.length ;i++) { %> 
-              <option value=" <%= data.Countries[i].Country %> "> <%= data.Countries[i].Country %> </option>
-          <% } %> 
-        </select>
-      </div>
-      <div class="col-md-4"></div>
     </div>
   </section>
 

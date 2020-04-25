@@ -52,17 +52,6 @@ blockquote h4{
     border-left: 5px solid #ff6363;
 }
 
-.countryrep{
-    margin: 3% 0 6% 0;
-}
-
-select {
-    border:none;
-    border-bottom: 3px solid  #2b580c;
-    width: 100%;
-    background-color: white;
-    font-size: large;
-}
 
 #map {
     top: 0; 
