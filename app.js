@@ -2,13 +2,17 @@ const path = require("path");
 const express = require("express");
 const app = express();
 const axios = require("axios");
+const bodyParser = require("body-parser");
 const request = require("request");
 // const covid19 = require("./public/JS/covid19");
 
 app.set("view engine", "ejs");
 const publicdirectorypath = path.join(__dirname, "/public");
 app.use(express.static(publicdirectorypath));
+app.use(bodyParser.urlencoded({extended: true}));
 
+
+var display = [];
 // Updated version
 app.get("/", async (req, res, next) => {
   try {
@@ -17,11 +21,19 @@ app.get("/", async (req, res, next) => {
       data: {
         global: response.data.Global,
         Countries: response.data.Countries,
-      }
+      },
+      disp: display
     });
   } catch (err) {
     console.log(err);
   }
+});
+
+app.post("/country", function(req,res){
+  var dt = req.body;
+  display.pop();
+  display.push(dt);
+  res.redirect("/");
 });
 
 // News Route
