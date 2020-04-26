@@ -1,7 +1,108 @@
+    <script src="https://unpkg.com/es6-promise@4.2.4/dist/es6-promise.auto.min.js"></script>
+    <script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiYWRhcnNoYWdyd2FsIiwiYSI6ImNrN3BuN2FoNTA4bGEzaXFkcjJvYXQ0ZnAifQ.IaCVUsnZqH77-agcveZKEw';
+        var map = new mapboxgl.Map({
+                        container: 'map',
+                        style: 'mapbox://styles/mapbox/dark-v10',
+                        center: [75,25],
+                        zoom: 3
+                    });
+
+        map.addControl(new mapboxgl.NavigationControl());
+
+        var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
+        '<% data["Countries"].forEach(function(ct){%>'
+                '<% var x = ct["Country"]; %>'
+                    mapboxClient.geocoding.forwardGeocode({
+                        query: '<%=x%>',
+                        autocomplete: false,
+                        limit: 1
+                    }).send().then(function(response) {
+                        if (response && response.body && response.body.features && response.body.features.length) {
+                            var feature = response.body.features[0];
+                            var popup = new mapboxgl.Popup({offset: 25}).setHTML('<div><h6 class="text-secondary">Country : <%=ct["Country"]%></h6><h6 class="text-info">Total Confirmed : <%=ct["TotalConfirmed"]%></h6><h6 class="text-info">New Confirmed : <%=ct["NewConfirmed"]%></h6><h6 class="text-success">Total Recovered : <%=ct["TotalRecovered"]%></h6><h6 class="text-success">New Recovered : <%=ct["NewRecovered"]%></h6><h6 class="text-danger">Total Deaths : <%=ct["TotalDeaths"]%></h6><h6 class="text-danger">New Deaths : <%=ct["NewDeaths"]%></h6></div>');
+                            let marker = new mapboxgl.Marker().setLngLat(feature.center);
+                            const element = marker.getElement();
+                            element.id = 'marker'
+                            element.addEventListener('mouseenter', () => popup.addTo(map));
+                            element.addEventListener('mouseleave', () => popup.remove());
+                            marker.setPopup(popup);
+                            marker.addTo(map);
+                        }
+                    });
+        '<% }); %>'
+    </script>
+
     <!-- Optional JavaScript -->
+    <script src="JS/app.js"></script>
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
+<footer class="footer footer_bg_1 mt-5">
+            <!--  <div class="circle_ball about-image">
+                  <img src="symptoms.png" alt="" style="width: 170px;">
+              </div>-->
+                  <div class="footer_top">
+                      <div class="container text-center">
+                          <div class="row">
+                              <div class="col-xl-4 col-md-4 col-lg-4">
+                                  <div class="footer_widget">
+                                      <h2>
+                                          <u class="text-dark font-weight-bolder" style="font-size: 30px;">LINKS</u>
+                                      </h2>
+                                      <ul>
+                                          <li><a  href="#navbar">Home</a></li>
+                                          <li><a target="_blank" href="#">India</a></li>
+                                          <li><a target="_blank" href="#">Global</a></li>
+
+                                      </ul>
+
+                                  </div>
+                              </div>
+                              <div class="col-xl-4 col-md-4 col-lg-4">
+                                  <div class="footer_widget text-center">
+                                        <img src="coronavirus_PNG6.png" alt="corona-footer" style="width: 250px;" data-aos="rotate-ac" data-aos-duration="3000" data-aos-easing="ease-in-out">
+                                        <div class="container text-center icons">
+                                          <a href="http://www.facebook.com/webarchclub" target="_blank"> <i class="fab fa-facebook fa-2x mr-3 ml-3 " style="color: white;"></i> </a>
+                                          <a href="http://www.instagram.com/webarchclub" target="_blank"><i class="fab fa-instagram fa-2x mr-3  " style="color: white;"></i> </a>
+                                          <a href="http://www.github.com/webarchclub" target="_blank"><i class="fab fa-github fa-2x mr-3 " style="color: white;"></i> </a>
+                                         </div>
+
+                                  </div>
+                              </div>
+                              <div class="col-xl-4 col-md-4 col-lg-4">
+                                  <div class="footer_widget">
+                                      <h2>
+                                             <u class="text-dark font-weight-bolder" style="font-size: 30px;"> MORE</u>
+                                             <ul>
+                                              <li><a target="_blank" href="https://www.google.com/url?sa=t&source=web&rct=j&url=https://www.who.int/emergencies/diseases/novel-coronavirus-2019&ved=2ahUKEwjT8Lyz_oPpAhVrIbcAHSFuAFkQFjAPegQICBAB&usg=AOvVaw2bqm1AADArANglLPqDC5aW">WHO</a></li>
+                                              <li><a target="_blank" href="https://www.google.com/url?sa=t&source=web&rct=j&url=https://mohfw.gov.in/&ved=2ahUKEwjbkLfu_oPpAhXRX3wKHaI-AhQQFjAAegQIARAB&usg=AOvVaw0P12pu_4vOFkMyTPfOrAEu">MoHFW</a></li>
+                                              <li><a target="_blank" href="https://mygov.in/covid-19/">MyGov.in</a></li>
+                                          </ul>
+                                      </h2>
+
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="copy-right_text">
+                      <div class="container">
+                          <div class="footer_border"></div>
+                          <div class="row">
+                              <div class="col-xl-12">
+                                  <div class="text-center"><a href="#navbar"><i class="fa fa-arrow-up fa-2x"></i></a></div>
+                                  <p class="copy_right text-center">
+
+                                      Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved || Developed by <a href="https://webarchsrm.com" target="_blank" class="font-weight-bolder"><i><u class="text-light">Team WebArch<u></i></a>
+
+                                  </p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
