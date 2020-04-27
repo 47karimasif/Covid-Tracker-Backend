@@ -1,7 +1,7 @@
-body { 
-    margin: 0; 
+body {
+    margin: 0;
     padding: 0;
-    font-family: "Roboto", sans-serif; 
+    font-family: "Roboto", sans-serif;
 }
 
 .heading{
@@ -52,11 +52,32 @@ blockquote h4{
     border-left: 5px solid #ff6363;
 }
 
+.countryrep{
+  margin: 3% 0 6% 0;
+}
+
+
+select {
+  border:none;
+  border-bottom: 3px solid  #2b580c;
+  width: 100%;
+  background-color: white;
+  font-size: large;
+  box-shadow: 5px 5px 18px #c3f584;
+  color: #0c9463;
+
+
+
+}
+select:hover {
+  cursor: pointer;
+}
+
 
 #map {
-    top: 0; 
-    bottom: 0; 
-    width: 100%; 
+    top: 0;
+    bottom: 0;
+    width: 100%;
     height: 80vh;
     margin-top:7%;
 }
@@ -92,7 +113,7 @@ blockquote h4{
   {
     color:purple;
   }
-  
+
   .footer {
     background-repeat: no-repeat;
     background-position: top center;
@@ -100,7 +121,7 @@ blockquote h4{
     background-size: cover;
     background-attachment: fixed;
     position: relative;
-    
+
   }
   .footer ul li{
     list-style-type: none;
@@ -120,7 +141,7 @@ blockquote h4{
    [data-aos="rotate-ac"] {
     transform: rotate(720deg);
     transition-property: transform;
-    
+
     }
     [data-aos="rotate-ac"].aos-animate {
     transform: rotate(0deg);
@@ -142,7 +163,7 @@ blockquote h4{
     -webkit-animation: bounce 2s infinite;
     animation: bounce 2s infinite;
   }
-  
+
   @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
       transform: translateY(0);
@@ -160,19 +181,19 @@ blockquote h4{
       padding-bottom: 30px;
     }
   }
-  
+
   @media (max-width: 767px) {
     .footer .footer_top .footer_widget {
       margin-bottom: 30px;
     }
   }
-  
+
   @media (min-width: 768px) and (max-width: 991px) {
     .footer .footer_top .footer_widget {
       margin-bottom: 30px;
     }
   }
-  
+
   .footer .footer_top .footer_widget h2 u{
       font-size: 25px;
   }
@@ -185,14 +206,14 @@ blockquote h4{
   .footer .footer_top .footer_widget h2 u{
     font-size: 20px;
   }
-  
+
   .footer .footer_top .footer_widget p {
     color: #fff;
     line-height: 42px;
     font-size: 16px;
     font-weight: 500;
   }
-  
+
   .footer .footer_top .footer_widget p.footer_text {
     font-size: 16px;
     color: #B2B2B2;
@@ -200,27 +221,27 @@ blockquote h4{
     font-weight: 400;
     line-height: 28px;
   }
-  
+
   .footer .footer_top .footer_widget p.footer_text a.domain {
     color: #B2B2B2;
     font-weight: 400;
   }
-  
+
   .footer .footer_top .footer_widget p.footer_text a.domain:hover {
     color: #fff;
     border-bottom: 1px solid #fff;
   }
-  
+
   .footer .footer_top .footer_widget p.footer_text.doanar a {
     font-weight: 500;
     color: #B2B2B2;
   }
-  
+
   .footer .footer_top .footer_widget p.footer_text.doanar a:hover {
     color: #fff;
     border-bottom: 1px solid #fff;
   }
-  
+
   .footer .footer_top .footer_widget p.footer_text.doanar a.first {
     margin-bottom: 10px;
   }
@@ -233,12 +254,12 @@ blockquote h4{
     color: #0181F5;
   }
 
-  
+
   .footer .copy-right_text {
     padding-bottom: 30px;
   }
-  
-  
+
+
   .footer .copy-right_text .footer_border {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     padding-bottom: 30px;
@@ -250,7 +271,7 @@ blockquote h4{
     margin-bottom: 0;
     font-weight: 400;
   }
-  
+
   @media (max-width: 767px) {
     .footer .copy-right_text .copy_right {
       font-size: 14px;
