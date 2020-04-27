@@ -1,8 +1,7 @@
-body {
-    margin: 0;
+body { 
+    margin: 0; 
     padding: 0;
-    font-family: "Roboto", sans-serif;
-
+    font-family: "Roboto", sans-serif; 
 }
 
 .heading{
@@ -11,10 +10,13 @@ body {
 
 .heading h1{
     text-transform: uppercase;
-    font-weight:;
+    font-weight:lighter;
     letter-spacing: 2px;
     word-spacing: 4px;
     margin: 5% auto 1% auto ;
+    padding-top: 3%;
+    padding-bottom: 10%;
+   
 }
 
 .heading h3{
@@ -29,7 +31,7 @@ blockquote{
     margin: 0 0 10% 0;
 }
 
-blockquote h4{
+ h4{
     padding-top: 10px;
     margin-bottom: 20px;
     font-weight: 400;
@@ -53,31 +55,11 @@ blockquote h4{
     border-left: 5px solid #ff6363;
 }
 
-.countryrep{
-  margin: 3% 0 6% 0;
-
-}
-
-
-select {
-  border:none;
-  border-bottom: 3px solid  #2b580c;
-  width: 100%;
-  background-color: white;
-  font-size: large;
-  box-shadow: 5px 5px 18px #c3f584;
-  color: #0c9463;
-
-}
-select:hover {
-  cursor: pointer;
-}
-
 
 #map {
-    top: 0;
-    bottom: 0;
-    width: 100%;
+    top: 0; 
+    bottom: 0; 
+    width: 100%; 
     height: 80vh;
     margin-top:7%;
 }
@@ -105,6 +87,48 @@ select:hover {
   .navbar-light .navbar-toggler-icon {
     background-image: url(https://www.seekpng.com/png/full/379-3794214_hamburger-list-menu-navigation-option-comments-white-hamburger.png);
   }
+
+  .publishedNews{
+
+padding-top: 4%;
+padding-left:0 ;
+
+  }
+
+  .news{
+
+padding-bottom: 0;
+
+
+  }
+  .author{
+
+  color: #808080;
+  }
+body{
+
+overflow: scroll;
+
+  }
+  .url{
+
+    color: #0000CD;
+  }
+  img{
+
+max-height: 25%;
+
+  }
+  .col-8{
+
+    max-height: 25% !important;
+  }
+
+.title{
+  font-weight: bold;
+  color: #000;
+  outline: none;
+}
 
   .footer_bg_1 {
     background:linear-gradient(to bottom, rgb(146, 146, 146),#000);
@@ -278,4 +302,3 @@ select:hover {
       font-size: 14px;
     }
   }
-
