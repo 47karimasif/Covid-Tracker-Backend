@@ -16,7 +16,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
     />
     <!-- Local CSS -->
-    <link rel="stylesheet" type="text/css" href="/CSS/newstyle.css" />
+    <link rel="stylesheet" type="text/css" href="/Public/CSS/newstyle.css" />
     <!-- MAP -->
     <script src="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
     <link
@@ -51,29 +51,29 @@
     <section class="heading">
     <h1>Global News</h1>
 </section>
- <% news.articles.forEach(function(art){%>
+ 
 <section class="news" data-aos="fade-right">
   <div class="container">
    
 <div class="row">
 <div class="col-4">
-<img src="globalnews.jpg" alt="image" class="img-fluid">
+<img src="globalnews.jpg" alt="image" >
 
 </div>
 
 <div class="col-8">
-  <details>
-<summary class="title"><%=art.title%><p class="float-right author"><%=art.source.name%></p>
-</summary>  
+
+<p class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, quibusdam.</p>
+  <p class="float-right author"><%=art.source.name%></p>
 <p class="publishedNews"><%=art.description%></p>
-<p class="url"><%=art.url%> </p>
-</details>
+<h5>class="url">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus consequatur ea amet eius quod unde. Aliquam inventore ducimus suscipit itaque.</h5> 
+
 </div>
 </div>
 </div>
 </section>
 
-<%})%>
+
 <footer class="footer footer_bg_1 mt-5">
   <!--  <div class="circle_ball about-image">
         <img src="symptoms.png" alt="" style="width: 170px;">
