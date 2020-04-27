@@ -30,6 +30,7 @@ app.get("/global-news", async (req, res, next) => {
     const response = await axios.get(
       "http://newsapi.org/v2/everything?q=covid&sortBy=publishedAt&language=en&apiKey=2ce620556cce40d6923ca8ee1d3374fe"
     );
+    
     res.render("news", { news: response.data });
   } catch (err) {
     console.log(err);
@@ -38,3 +39,5 @@ app.get("/global-news", async (req, res, next) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`App running on ${PORT}`));
+
+
