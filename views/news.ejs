@@ -16,13 +16,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
     />
     <!-- Local CSS -->
-    <link rel="stylesheet" type="text/css" href="/CSS/newstyle.css" />
-    <!-- MAP -->
-    <script src="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
-    <link
-      href="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" type="text/css" href="/CSS/style.css" />
+     
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
     <title>Project-COVID</title>
@@ -48,7 +43,7 @@
       </nav>
     </section>
 
-    <section class="heading">
+    <section class="newsheading">
     <h1>Global News</h1>
 </section>
  <% news.articles.forEach(function(art){%>
@@ -63,7 +58,7 @@
 
 <div class="col-8">
   <details>
-<summary class="title"><%=art.title%><p class="float-right author"><%=art.source.name%></p>
+<summary class="newstitle"><%=art.title%><p class="float-right author"><%=art.source.name%></p>
 </summary>  
 <p class="publishedNews"><%=art.description%></p>
 <p class="url"><%=art.url%> </p>
